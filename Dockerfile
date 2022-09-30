@@ -9,6 +9,8 @@ RUN pip install --no-cache-dir python-swiftclient==4.1.0 python-keystoneclient>=
 
 FROM python:${PYTHON_MAJOR_MINOR}-alpine
 
+ARG PYTHON_MAJOR_MINOR
+
 COPY --from=build /usr/local/lib/python${PYTHON_MAJOR_MINOR}/site-packages /usr/local/lib/python${PYTHON_MAJOR_MINOR}/site-packages
 COPY --from=build /usr/local/bin /usr/local/bin
 
