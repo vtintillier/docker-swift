@@ -2,5 +2,15 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:base"
+  ],
+  "regexManagers": [
+    {
+      "fileMatch": ["^Dockerfile$"],
+      "matchStrings": [
+        "python-swiftclient==(?<currentValue>.*?) "
+      ],
+      "depNameTemplate": "python-swiftclient",
+      "datasourceTemplate": "pypi"
+    }
   ]
 }
