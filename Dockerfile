@@ -1,11 +1,11 @@
-ARG PYTHON_MAJOR_MINOR=3.10
+ARG PYTHON_MAJOR_MINOR=3.11
 
 FROM python:${PYTHON_MAJOR_MINOR}-alpine as build
 
 # needed to build netifaces
 RUN apk add --no-cache build-base python3-dev linux-headers
 
-RUN pip install --no-cache-dir python-swiftclient==4.3.0 python-keystoneclient>=2.0.0
+RUN pip install --no-cache-dir python-swiftclient==4.4.0 python-keystoneclient>=2.0.0
 
 FROM python:${PYTHON_MAJOR_MINOR}-alpine
 
